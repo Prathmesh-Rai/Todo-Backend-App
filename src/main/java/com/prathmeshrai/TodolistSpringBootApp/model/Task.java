@@ -1,23 +1,27 @@
 package com.prathmeshrai.TodolistSpringBootApp.model;
 
+
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
-@NoArgsConstructor
+@ToString
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "task_tbl")
 public class Task {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id ;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "task_seq_generator")
+    @SequenceGenerator(name="task_seq_generator", sequenceName = "task_tbl_id_seq", allocationSize=1)
+    private Long id;
 
+    @Column(name = "description")
     private String description ;
 
     @Enumerated(EnumType.STRING)
-    private Status status;
+    @Column(name = "status")
+    private StatusEnum status;
+
 
     public Long getId() {
         return id;
@@ -35,11 +39,11 @@ public class Task {
         this.description = description;
     }
 
-    public Status getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 }

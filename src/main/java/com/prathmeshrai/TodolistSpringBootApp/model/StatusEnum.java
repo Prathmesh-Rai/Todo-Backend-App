@@ -1,6 +1,6 @@
 package com.prathmeshrai.TodolistSpringBootApp.model;
 
-public enum Status {
-    PENDING,
-    COMPLETED
+public enum StatusEnum {
+    pending,
+    completed
 }

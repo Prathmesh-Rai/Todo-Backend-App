@@ -1,0 +1,1 @@
+CREATE CAST (varchar AS status_enum) WITH INOUT AS IMPLICIT;

@@ -1,3 +1,3 @@
 CREATE TABLE task_tbl (
-    id SERIAL PRIMARY KEY
+    Id SERIAL PRIMARY KEY
 );

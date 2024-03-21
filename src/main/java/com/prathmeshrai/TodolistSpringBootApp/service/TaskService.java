@@ -2,7 +2,11 @@ package com.prathmeshrai.TodolistSpringBootApp.service;
 
 import com.prathmeshrai.TodolistSpringBootApp.model.Task;
 
+import java.util.List;
+
 public interface TaskService {
-    public Task createTask(Task t);
+    Task createTask(Task t);
+
+    List<Task> getTasks() ;
 
 }
